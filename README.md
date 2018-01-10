@@ -16,6 +16,6 @@ the code can probably be very much improved.
   you should be able to easily export it into the calendar app or send it to someone via E-mail or text etc
   
 * Link to databinding documentation:
-  .https://developer.android.com/topic/libraries/data-binding/index.html1
+  .https://developer.android.com/topic/libraries/data-binding/index.html
   
   
