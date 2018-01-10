@@ -7,15 +7,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import com.example.israelsson.todolist.databinding.ActivityMainBinding;
 
-import java.util.ArrayList;
+import com.example.israelsson.todolist.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     public static RecyclerView mTodoRecyclerView;
-    private ArrayList<ToDoModel> toDoModels = new ArrayList<>();
+    public static ToDoAdapter sTodoAdapter;
+    //private ArrayList<ToDoModel> toDoModels = new ArrayList<>();
     ActivityMainBinding binding;
     MainViewModel viewModel;
 
@@ -33,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         //get an instance of the RecyclerView from the binding, set LayoutManager and a new ToDoAdapter
         mTodoRecyclerView = binding.recyclerView;
         mTodoRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        ToDoAdapter mToDoAdapter = new ToDoAdapter(viewModel.allNotes(), viewModel);
-        mTodoRecyclerView.setAdapter(mToDoAdapter);
+        sTodoAdapter = new ToDoAdapter(viewModel.allNotes(), viewModel);
+        mTodoRecyclerView.setAdapter(sTodoAdapter);
+
 
         //Set this view into the mainView variable inside the <data> tag in activity_main.xml to be able to
         //use it for the onClick attribute.
@@ -46,12 +47,15 @@ public class MainActivity extends AppCompatActivity {
            MainViewModel to get the new list of notes from the allNotesCursor and sets a new Adapter to the
            RecyclerView
          */
+
         public void addNoteFromEditText(View view) {
             String noteEntered = binding.enterNoteEditText.getText().toString();
             viewModel.addNote(noteEntered);
+            binding.setNote(noteEntered);
             binding.enterNoteEditText.setText("");
             mTodoRecyclerView.setAdapter(new ToDoAdapter(viewModel.allNotes(), viewModel));
         }
+
 
     }
 

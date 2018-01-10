@@ -22,16 +22,16 @@ public class ToDoDbHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        //String query called SQL_CREATE_WAITLIST_TABLE that will create the table
-        final String SQL_CREATE_USERS_TABLE = "CREATE TABLE " +
+        //String query called SQL_CREATE_TODO_TABLE that will create the table
+        final String SQL_CREATE_TODO_TABLE = "CREATE TABLE " +
                 ToDoContract.TodoEntry.TABLE_NAME + " (" +
                 ToDoContract.TodoEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 ToDoContract.TodoEntry.COLUMN_NOTE + " TEXT NOT NULL, " +
                 ToDoContract.TodoEntry.COLUMN_TIMESTAMP + " TIMESTAMP DEFAULT CURRENT_TIMESTAMP" +
                 ");";
 
-        //Execute the query by calling execSQL on sqLiteDatabase and pass the string query SQL_CREATE_WAITLIST_TABLE
-        db.execSQL(SQL_CREATE_USERS_TABLE);
+        //Execute the query by calling execSQL on sqLiteDatabase and pass the string query SQL_CREATE_TODO_TABLE
+        db.execSQL(SQL_CREATE_TODO_TABLE);
     }
 
     @Override

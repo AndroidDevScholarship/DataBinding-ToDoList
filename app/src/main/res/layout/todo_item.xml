@@ -6,6 +6,7 @@
         <variable name="view" type="android.view.View"/>
         <variable name="viewModel" type="com.example.israelsson.todolist.MainViewModel"/>
         <variable name="position" type="long"/>
+        <variable name="context" type="android.content.Context"/>
         <variable name="todomodel" type="com.example.israelsson.todolist.ToDoModel"/>
 
     </data>
@@ -15,7 +16,7 @@
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:orientation="vertical"
-    android:onClick="@{() -> viewModel.removeNote(position)}">
+    android:onClick="@{()-> viewModel.removeNote(position)}">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"

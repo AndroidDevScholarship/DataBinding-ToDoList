@@ -19,10 +19,12 @@ public class ToDoModel extends BaseObservable {
     }
 
     public String getTodoString(){
+        notifyPropertyChanged(com.example.israelsson.todolist.BR.todoString);
         return todoString;
     }
 
     public long itemId() {
+        notifyPropertyChanged(com.example.israelsson.todolist.BR.todoString);
         return itemId;
     }
 
@@ -33,5 +35,6 @@ public class ToDoModel extends BaseObservable {
 
     public void setItemId(long itemId) {
         this.itemId = itemId;
+        notifyPropertyChanged(com.example.israelsson.todolist.BR.todoString);
     }
 }

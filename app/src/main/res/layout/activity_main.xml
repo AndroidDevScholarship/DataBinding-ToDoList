@@ -6,6 +6,7 @@
     <data>
         <import type="android.view.View"/>
         <variable name="mainView" type="com.example.israelsson.todolist.MainActivity"/>
+        <variable name="viewModel" type="com.example.israelsson.todolist.MainViewModel"/>
         <variable name="note" type="String"/>
     </data>
 
@@ -53,7 +54,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/enterNoteEditText"
-            android:onClick="@{mainView::addNoteFromEditText}"/>
+            android:onClick="@{mainView::addNoteFromEditText}" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>

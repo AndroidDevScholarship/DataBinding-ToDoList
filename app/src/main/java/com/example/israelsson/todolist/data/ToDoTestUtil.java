@@ -17,7 +17,7 @@ import java.util.List;
             if(db == null){
                 return;
             }
-            //create a list of fake guests
+            //create a list of fake entries
             List<ContentValues> list = new ArrayList<ContentValues>();
 
             ContentValues cv = new ContentValues();
@@ -37,7 +37,7 @@ import java.util.List;
             list.add(cv);
 
 
-            //insert all users in one transaction
+            //insert all notes in one transaction
             try
             {
                 db.beginTransaction();
@@ -50,7 +50,7 @@ import java.util.List;
                 db.setTransactionSuccessful();
             }
             catch (SQLException e) {
-                //too bad :(
+
             }
             finally
             {
